@@ -1,15 +1,16 @@
 <div class="login jumbotron center-block">
   <h1 class="text-center">Login</h1>
   <div class="login-box">
-    <form role="form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    <form role="form" [formGroup]="loginForm" (ngSubmit)="postLogin()">
       <div class="form-group row">
-        <label for="username" class="col-md-2">Username</label>
+        <label for="email" class="col-md-2">Email</label>
         <div class="col-md-10">
           <input type="text"
+                 [ngClass]="{'hass-error':(!email.valid && email.touched),'hass-success':(email.valid && email.touched)}"
                  class="form-control"
-                 id="username"
-                 [formControl]="username"
-                 placeholder="Username">
+                 id="email"
+                 [formControl]="email"
+                 placeholder="请输入您的Email">
         </div>
       </div>
       <div class="form-group row">
@@ -17,14 +18,15 @@
         <div class="col-md-10">
           <input type="password"
                  class="form-control"
+                 [ngClass]="{'hass-error':(!password.valid && password.touched),'hass-success':(password.valid && password.touched)}"
                  [formControl]="password"
                  id="password"
-                 placeholder="Password">
+                 placeholder="请输入您的密码">
         </div>
       </div>
       <div class="form-group row">
         <div class="col-md-10 col-md-offset-2">
-          <button type="submit" [disabled]="!loginForm.valid" class="btn btn-default">登录</button>
+          <button type="submit" [disabled]="!loginForm.valid" class="btn btn-success">登录</button>
           <a routerLink="/register"class="pull-right text-right">注册</a>
         </div>
       </div>

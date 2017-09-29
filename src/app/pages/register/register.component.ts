@@ -46,7 +46,6 @@ export class RegisterComponent{
 
   // 注册
   register(){
-    console.log(this.isCheckEmail);
     if(this.editForm.valid && !this.isCheckEmail){
       this._service.registerUser(this.editForm.value).subscribe(
         ({result}) => {

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient,HttpHeaders,HttpParams,HttpErrorResponse,HttpResponse  } from "@angular/common/http";
+import { HttpClient,HttpHeaders,HttpParams,HttpErrorResponse  } from "@angular/common/http";
 import { NotificationsService } from "angular2-notifications"
 import { API_ROOT } from "@config";
 import { AppService } from "@app/app.service";
@@ -59,5 +59,10 @@ export class RegisterService{
       .switchMap(this.handleResponse)
       .retry(3)
       .catch(this.handleError)
+  }
+
+  //
+  public loggedIn(){
+    return this.appService.tokenNotExpired();
   }
 }

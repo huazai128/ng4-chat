@@ -7,12 +7,10 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { SocketIoModule, SocketIoConfig } from "ngx-socket-io";
 import { HttpClientModule } from "@angular/common/http";
 import { SimpleNotificationsModule } from 'angular2-notifications';
-import { AppService } from "./app.service"
 import { AppComponent } from './app.component';
 import { routing } from "./app.routing";
 
 export function tokenGetter(): string { return localStorage.getItem('id_token'); }
-
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {jwt:localStorage.getItem('id_token')}};
 
 @NgModule({

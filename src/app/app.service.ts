@@ -10,6 +10,6 @@ export class AppService{
 
     const token:string =  localStorage.getItem('id_token');
 
-    return token != null && this.jwtHelper.isTokenExpired(token);
+    return token != null && !this.jwtHelper.isTokenExpired(token);
   }
 }

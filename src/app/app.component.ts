@@ -32,7 +32,8 @@ export class AppComponent {
       .concatAll()
       .distinct()
       .subscribe((url) => {
-        if(!Object.is(url,'/') && (!Object.is(url,"/login") && !Object.is(url,"/register"))){
+        if(!Object.is(url,'/') && !Object.is(url,"/login")  && !Object.is(url,"/register")){
+          console.log("=====");
           this.routerCheck(url);
         }
     })
@@ -51,10 +52,13 @@ export class AppComponent {
     preventLastDuplicates: false
   };
 
-  ngOnInit(){}
+  ngOnInit(){
+    this.routerCheck();
+  }
 
   // 路由检测
-  private routerCheck(url:string):void{
+  private routerCheck(url:string=""):void{
+    console.log(this.appService.tokenNotExpired());
     if(!this.appService.tokenNotExpired()){
       setTimeout(() => {
         this._notifications.error('长的太丑了，不见！！！', '...', { timeOut: 1000 });
@@ -65,7 +69,7 @@ export class AppComponent {
         }
       },0)
     }else if(!this.optionIsInited){
-      this._router.navigate(['/home']);
+      this._router.navigate(["/"])
       this.optionIsInited = true;
     }
   }
