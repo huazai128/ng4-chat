@@ -1,8 +1,14 @@
-# Ng2Chat
+# Ng4Chat
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
+前端使用的技术包含Ng4+Rxjs+socket.io-client+@auth0/angular-jwt(这个是支持HttpClient)+Bootstrap等技术,本项目所有请求使用HttpClient
 
-## Development server
+后台使用的技术包含ES6+express+mongodb+sockit.io
+
+## 运行命令
+
+node: -v8.5.0
+
+Angular-cli: -v1.4.2
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
