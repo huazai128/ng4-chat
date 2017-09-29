@@ -1,0 +1,33 @@
+<div class="login jumbotron center-block">
+  <h1 class="text-center">Login</h1>
+  <div class="login-box">
+    <form role="form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+      <div class="form-group row">
+        <label for="username" class="col-md-2">Username</label>
+        <div class="col-md-10">
+          <input type="text"
+                 class="form-control"
+                 id="username"
+                 [formControl]="username"
+                 placeholder="Username">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-md-2">Password</label>
+        <div class="col-md-10">
+          <input type="password"
+                 class="form-control"
+                 [formControl]="password"
+                 id="password"
+                 placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-10 col-md-offset-2">
+          <button type="submit" [disabled]="!loginForm.valid" class="btn btn-default">登录</button>
+          <a routerLink="/register"class="pull-right text-right">注册</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

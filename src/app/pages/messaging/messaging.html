@@ -1,0 +1,23 @@
+<div class="panel" >
+  <div class="panel-body" #scrollMe>
+    <ul class="chat">
+      <li >
+        <child-message></child-message>
+      </li>
+    </ul>
+  </div>
+  <div class="panel-footer" style="border-top: 1px solid #333">
+    <p style="min-height: 10px; color: rgba(91, 192, 222, 0.8);">writers</p>
+    <div class="input-group">
+      <input type="text"
+             class="form-control input-sm chat_input"
+             placeholder="Write your message here..."
+             [(ngModel)]="draftMessageText"
+             (keydown.enter)="onEnter($event)"
+             (input)="textChanged.next($event.target.value)"
+             (blur)="lostFocus.next($event.target.value)"/>
+      <span class="input-group-btn">
+            <button class="btn btn-primary btn-sm" (click)="onEnter($event)">Send</button>
+        </span>
+    </div>
+  </div>

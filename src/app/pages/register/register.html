@@ -1,0 +1,65 @@
+<div class="login jumbotron center-block">
+  <h1 class="text-center">Register</h1>
+  <div class="login-box">
+    <form  class="form-horizontal"
+           [formGroup]="editForm"
+           (ngSubmit)="register()">
+      <div class="form-group row">
+        <label for="username" class="col-md-2">email</label>
+        <div class="col-md-10">
+          <input type="text"
+                 [ngClass]="{'hass-error':(!email.valid && email.touched),'hass-success':(email.valid && email.touched)}"
+                 class="form-control"
+                 id="email"
+                 name="email"
+                 (change)="getEmail(email.value)"
+                 [formControl]="email"
+                 placeholder="邮箱">
+          <span *ngIf="isCheckEmail">邮箱已注册</span>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="username" class="col-md-2">Username</label>
+        <div class="col-md-10">
+          <input type="text"
+                 [ngClass]="{'hass-error':(!username.valid && username.touched),'hass-success':(username.valid && username.touched)}"
+                 class="form-control"
+                 id="username"
+                 [formControl]="username"
+                 placeholder="用户名">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-md-2">Password</label>
+        <div class="col-md-10">
+          <input type="password"
+                 class="form-control"
+                 [ngClass]="{'hass-error':(!password.valid && password.touched),'hass-success':(password.valid && password.touched)}"
+                 [formControl]="password"
+                 id="password"
+                 placeholder="输入密码">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="password" class="col-md-2">rePassword</label>
+        <div class="col-md-10">
+          <input type="password"
+                 class="form-control"
+                 [ngClass]="{'hass-error':(!repassword.valid && repassword.touched),'hass-success':(repassword.valid && repassword.touched)}"
+                 [formControl]="repassword"
+                 id="repassword"
+                 placeholder="重新输入密码">
+          <span *ngIf="!passwords.valid && (password.touched || repassword.touched)" class="help-block sub-little-text">输入的密码不一致！</span>
+        </div>
+      </div>
+      <div class="form-group  row">
+        <div class="col-md-10 offset-md-2">
+          <button [disabled]="!editForm.valid" class="btn btn-success">注册</button>
+          <a routerLink="/login" class="pull-right text-right">登录</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
