@@ -9,6 +9,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { AppComponent } from './app.component';
 import { routing } from "./app.routing";
+import { CoreModule } from "./core/core.module";
 
 export function tokenGetter(): string { return localStorage.getItem('id_token'); }
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {jwt:localStorage.getItem('id_token')}};
@@ -35,6 +36,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {jwt:loc
       }
     }),
     SocketIoModule.forRoot(config),
+    CoreModule.forRoot(),
     PageModule,
     routing
   ],

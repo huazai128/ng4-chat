@@ -12,10 +12,5 @@ import { CommonModule } from "@angular/common";
 })
 
 export class NgaModule{
-  static forRoot():ModuleWithProviders{
-    return <ModuleWithProviders> {
-      ngModule:NgaModule,
-      providers:[]
-    }
-  }
+
 }

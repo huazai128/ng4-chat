@@ -1,19 +1,19 @@
-<div class="row">
-  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">JWT info</button>
-  <div id="demo" class="collapse">
-    <div class="home col-md-5">
-      <!--<h2 *ngIf="jwt">Your JWT is:</h2>-->
-      <!--<pre *ngIf="jwt" class="jwt"><code>{{ jwt }}</code></pre>-->
-      <!--<pre *ngIf="jwt" class="jwt"><code>{{ decodedJwt | json }}</code></pre>-->
-      <p>Click any of the buttons to call an API and get a response</p>
-      <!--<p><a class="btn btn-primary btn-lg" role="button" (click)="callAnonymousApi()">Call Anonymous API</a></p>-->
-      <!--<p><a class="btn btn-primary btn-lg" role="button" (click)="callSecuredApi()">Call Secure API</a></p>-->
-      <!--<p><a class="btn btn-primary btn-lg" role="button" (click)="logout()">Logout</a></p>-->
-      <!--<h2 *ngIf="response">The response of calling the <span class="red">{{api}}</span> API is:</h2>-->
-      <!--<h3 *ngIf="response">{{response}}</h3>-->
-    </div>
+<div class="row pz-margin">
+  <div class="col-md-8 col-md-offset-2 text-center">
+    <form>
+      <div class="form-group">
+        <label class="sr-only">房间名</label>
+        <input type="text" class="form-control search-room-input" ng-change="searchRoom()" ng-model="searchKey" placeholder="Search room">
+      </div>
+    </form>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-3"></div>
+</div>
+
+
 <div class="row">
   <div class="home col-md-5">
     <h4>Welcome </h4>

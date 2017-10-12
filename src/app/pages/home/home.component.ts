@@ -1,4 +1,5 @@
 import { Component,ViewEncapsulation } from "@angular/core";
+import { SocketApi } from "@core/socketApi";
 
 @Component({
   selector:"page-home",
@@ -8,5 +9,14 @@ import { Component,ViewEncapsulation } from "@angular/core";
 })
 
 export class HomeComponent{
+
+  constructor(private socketApi:SocketApi){
+
+  }
+
+  ngOnInit(){
+
+    this.socketApi.getRooms()
+  }
 
 }
